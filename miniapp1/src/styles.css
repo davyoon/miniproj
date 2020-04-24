@@ -1,4 +1,16 @@
-h1 {
-  color: white;
-  background-color: black;
+.checked {
+	color: gray;
+	text-decoration: line-through;
+	font-style: italic;
+}
+
+.todo-container {
+    border: 1px solid #D3D3D3;
+    width: 250px;
+    padding: 50px 50px 80px 50px;
+    margin: 0 auto;
+}
+
+form div {
+    margin-top: 30px;
 }

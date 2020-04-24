@@ -15,9 +15,6 @@ const ToDoItem = (props) => {
 		)
 }
 
-
-
-
 class App extends React.Component {
 	constructor(props){
 		super(props)
@@ -36,14 +33,14 @@ class App extends React.Component {
 	handleChange(props, event) {
 		let list = this.state.todos;
 		let target = list[props.id];
+		let parent = event.target.parentElement;
 		target.done = !target.done;
 		list[props.id] = target;
 
+		target.done ? parent.classList.add("checked") : parent.classList.remove("checked")
+
 		return this.setState(list)
 	}
-
-
-
 
   render() {
     
@@ -59,24 +56,6 @@ class App extends React.Component {
     	</div>
     	)
 
-    // return (
-    // 	<div className="todo-container">
-    // 		<form>
-	   //  		{this.state.todos.map(todo => {
-	   //  			return (
-	   //  				<div key={todo.id}>
-				// 				<label>
-				// 	  			<input type="checkbox" id={todo.id} name={todo.task} onChange={this.handleChange} checked={todo.done} />
-				// 	 				{todo.task}
-				// 	 			</label>
-				// 	  		<hr />
-  		// 				</div>	
-	   //  				)
-	   //  		})}
-	   //  	</form>	
-    // 	</div>
-    // 	)
-
   }
 }
 
@@ -91,21 +70,6 @@ export default hot(App);
 
 // import React from "react";
 // import { hot } from 'react-hot-loader/root';
-
-// // const ToDoItem = (props) => {
-// // 	const {id, task, done, handleChange} = props.todo;
-// // 	return (
-// // 		<div>
-// // 			<label>
-// //   			<input type="checkbox" name={task} onChange={handleChange} checked={done} />
-// //  				{task}
-// //  			</label>
-// //   		<hr />
-// //   	</div>	
-// // 		)
-// // }
-
-
 
 
 // class App extends React.Component {
@@ -138,18 +102,6 @@ export default hot(App);
 
 //   render() {
     
-//     // return (
-//     // 	<div className="todo-container">
-//     // 		<form>
-// 	   //  		{this.state.todos.map(todo => {
-// 	   //  			return (
-// 	   //  				<ToDoItem key={todo.id} todo={todo} handleChange={this.handleChange} />
-// 	   //  				)
-// 	   //  		})}
-// 	   //  	</form>	
-//     // 	</div>
-//     // 	)
-
 //     return (
 //     	<div className="todo-container">
 //     		<form>
