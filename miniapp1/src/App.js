@@ -1,19 +1,7 @@
 
 import React from "react";
 import { hot } from 'react-hot-loader/root';
-
-const ToDoItem = (props) => {
-	const {id, task, done} = props.todo;
-	return (
-		<div>
-			<label>
-  			<input type="checkbox" name={task} onChange={props.handleChange.bind(this, {id: id})} checked={done} />
- 				{task}
- 			</label>
-  		<hr />
-  	</div>	
-		)
-}
+import ToDoItem from './ToDoItem.js';
 
 class App extends React.Component {
 	constructor(props){
